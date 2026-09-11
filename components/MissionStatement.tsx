@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Tag from "@/components/Tag";
+import LinkButton from "@/components/LinkButton";
 
 type MissionLink = {
   label: string;
@@ -37,28 +38,8 @@ export default function MissionStatement({
           {heading}
         </h2>
         <div className="mission-statement-links flex flex-wrap items-center justify-center gap-20">
-          {links.map(({ label, href, accent }) => (
-            <a
-              key={label}
-              href={href}
-              className="mission-statement-link flex h-12 items-center gap-2 px-5 font-mono text-body-base text-on-primary"
-            >
-              {label}
-              <svg
-                viewBox="0 0 24 24"
-                className={`size-6 shrink-0 ${accent ? "text-secondary" : "text-on-primary"}`}
-                fill="none"
-                aria-hidden="true"
-              >
-                <path
-                  d="M5 12H19M12 19L19 12L12 5"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </a>
+          {links.map((link) => (
+            <LinkButton key={link.label} {...link} />
           ))}
         </div>
       </div>
