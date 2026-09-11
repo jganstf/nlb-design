@@ -144,6 +144,8 @@
   --spacing-40: 10.00rem; /* 160px */
   --spacing-65: 16.25rem; /* 260px */
 
+  --spacing-gap-sm: calc(var(--spacing) * 3);
+  --spacing-gap-md: calc(var(--spacing) * 6);
   --spacing-gap-xl: var(--spacing-16);
 
   --spacing-inline: clamp(spacing-5, spacing-10);

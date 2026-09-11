@@ -1,0 +1,56 @@
+/**
+ * https://www.figma.com/design/gvzEWIlCG5ER28tsFD6YlI/Nantucket---Design-System?node-id=114-258&m=dev
+ * https://www.figma.com/design/gvzEWIlCG5ER28tsFD6YlI/Nantucket---Design-System?node-id=673-1914&m=dev
+ *
+ * Shared layout/typography for the "Link item" component, factored out of
+ * the inactive/hover state variants below.
+ */
+@utility link-item-base {
+  display: flex;
+  align-items: flex-end;
+  gap: calc(var(--spacing) * 4);
+  overflow: clip;
+  border-radius: 4px;
+  background-color: var(--color-surface-dark);
+  padding-block: var(--spacing-gap-sm);
+  padding-inline: var(--spacing-gap-md);
+
+  & > span,
+  & > p {
+    flex: 1 0 0%;
+    min-width: 1px;
+    word-break: break-word;
+    font-family: var(--font-mono);
+    font-size: var(--text-body-base);
+    line-height: 1.6;
+    letter-spacing: var(--tracking-normal);
+  }
+
+  & > svg,
+  & > img {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+@utility link-item--inactive {
+  @apply link-item-base;
+
+  & > span,
+  & > p {
+    color: var(--color-on-background-subtle);
+  }
+}
+
+@utility link-item--hover {
+  @apply link-item-base;
+
+  /* todo: */
+  background: linear-gradient(0deg, var(--hover-darker, rgba(85, 77, 64, 0.08)) 0%, var(--hover-darker, rgba(85, 77, 64, 0.08)) 100%), var(--surface-dark, #F3EEE5);
+
+  & > span,
+  & > p {
+    color: var(--color-on-surface-dark);
+  }
+}
