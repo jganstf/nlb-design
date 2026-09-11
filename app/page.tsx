@@ -4,6 +4,7 @@ import CtaContact from "@/components/CtaContact";
 import EventsPreview from "@/components/EventsPreview";
 import NewsPreview from "@/components/NewsPreview";
 import BasicLeftRight from "@/components/BasicLeftRight";
+import HeroTertiary from "@/components/HeroTertiary";
 
 export default function Home() {
   return (
@@ -94,6 +95,11 @@ export default function Home() {
         ]}
       />
       <CtaContact />
+      <HeroTertiary
+        eyebrow="Events"
+        heading="Our upcoming events"
+        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat."
+      />
     </>
   );
 }

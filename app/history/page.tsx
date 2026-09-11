@@ -1,3 +1,4 @@
+import HeroQuaternary from "@/components/HeroQuaternary";
 import HistorySlider from "@/components/HistorySlider";
 
 // Hardcoded history events, ordered as they appear in the slider (most recent
@@ -67,5 +68,15 @@ const historyEvents = [
 ];
 
 export default function HistoryPage() {
-  return <HistorySlider events={historyEvents} />;
+  return (
+    <>
+      <HeroQuaternary
+        eyebrow="History"
+        title="A look back at the Land Bank's story."
+        backgroundImage="/hero-quaternary/background.jpg"
+        backgroundImageAlt="Historic aerial illustration of the Nantucket harbor and coastline"
+      />
+      <HistorySlider events={historyEvents} />
+    </>
+  );
 }

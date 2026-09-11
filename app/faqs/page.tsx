@@ -1,5 +1,5 @@
 import Image from "next/image";
-import HeroTertiary from "@/components/HeroTertiary";
+import HeroQuaternary from "@/components/HeroQuaternary";
 import FaqItem from "@/components/FaqItem";
 
 const GENERAL_FAQS = [
@@ -50,11 +50,11 @@ const FORM_FILING_FAQS = [
 export default function FaqsPage() {
   return (
     <>
-      <HeroTertiary
+      <HeroQuaternary
         eyebrow="FAQs"
-        heading="Have questions? We have the answers."
-        imageSrc="/images/hero-faqs.png"
-        imageAlt="Wildflowers on a Nantucket conservation property"
+        title="Have questions? We have the answers."
+        backgroundImage="/images/hero-faqs.png"
+        backgroundImageAlt="Wildflowers on a Nantucket conservation property"
       />
       <section className="faq-section relative flex w-full overflow-clip bg-background px-10 py-24">
         <Image

@@ -1,4 +1,4 @@
-import { HeroQuaternary } from "../components/hero-quaternary";
+import HeroQuaternary from "@/components/HeroQuaternary";
 
 export default function ConservationPage() {
   return (
