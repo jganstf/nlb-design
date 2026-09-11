@@ -3,7 +3,7 @@
  *
  * "Faq item" — a click-to-expand row. Figma models open/closed and
  * inactive/hover as four static variants; here open/closed is real state
- * (toggled by the component) and hover is a plain `&:hover`.
+ * (toggled by the component) and hover has no visual effect by design.
  */
 @utility faq-item {
   display: flex;
@@ -17,10 +17,6 @@
   background-color: var(--color-surface-dark);
   text-align: left;
   cursor: pointer;
-
-  &:hover {
-    background-image: linear-gradient(var(--color-hover-lighter), var(--color-hover-lighter));
-  }
 }
 
 @utility faq-item-header {
