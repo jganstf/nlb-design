@@ -3,7 +3,7 @@ import MissionStatement from "@/components/MissionStatement";
 
 export default function Home() {
   return (
-    <main>
+    <>
       <VideoBand
         posterSrc="/images/hero-cyclists.png"
         posterAlt="Cyclists riding a dirt path through Nantucket conservation land at sunset"
@@ -17,6 +17,6 @@ export default function Home() {
           { label: "Recreation", href: "#" },
         ]}
       />
-    </main>
+    </>
   );
 }

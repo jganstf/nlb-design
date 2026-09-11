@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { EB_Garamond, DM_Sans, DM_Mono } from "next/font/google";
 import "../css/globals.css";
+import Footer from "@/components/Footer";
 
 const fontSerif = EB_Garamond({
   variable: "--font-serif-loaded",
@@ -29,7 +30,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${fontSerif.variable} ${fontSans.variable} ${fontMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <main>{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }
