@@ -66,7 +66,7 @@ export default function FaqsPage() {
           className="faq-section-line"
         />
         <div className="faq-section-inner">
-          <h2 className="faq-section-title">FAQs</h2>
+          <h2 className="faq-section-title text-on-background text-headline-xl">FAQs</h2>
           <div className="faq-groups">
             <div className="faq-group">
               <h3 className="faq-group-title">General FAQ</h3>

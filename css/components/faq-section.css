@@ -37,15 +37,6 @@
   flex-wrap: wrap;
 }
 
-@utility faq-section-title {
-  font-family: var(--font-serif);
-  font-weight: var(--font-weight-regular);
-  font-size: var(--type-size-display-sm);
-  line-height: 1;
-  letter-spacing: var(--tracking-tight);
-  color: var(--color-on-background);
-}
-
 @utility faq-groups {
   display: flex;
   max-width: 42rem;
