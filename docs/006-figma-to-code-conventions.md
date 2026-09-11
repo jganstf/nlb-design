@@ -57,3 +57,31 @@ When in doubt: ask "does this number represent a real design constraint
 that might be tracking the grid?" Fixed sizes for things like icons are fine
 to keep. Any width or max-width is guilty until proven innocent — default to
 `w-full` and a `deferred-work.md` note rather than carrying over the number.
+
+## Section-level spacing: inline padding and block spacing
+
+Every top-level section (`VideoBand`, `MissionStatement`, the FAQ page
+sections, etc.) has two outer spacing concerns, and both are driven by
+tokens in `css/tokens.css` — never a one-off arbitrary value, even a fluid
+one built by hand for that section:
+
+- **Inline padding** (the left/right edge padding of the section) must
+  always use the `tf-px` utility class (`css/globals.css`). Don't write
+  `px-5 md:px-10` or a bespoke `clamp()` — `tf-px` is that fluid 20px→40px
+  scale already, applied consistently everywhere.
+- **Block spacing** (the section's top/bottom padding — its vertical
+  rhythm) must always be one of the responsive `--spacing-s1`..`--spacing-s9`
+  tokens in `css/tokens.css` (used as `py-s1`, `py-s9`, etc., since they're
+  exposed via `@theme inline`). Check the section's Figma mobile and
+  desktop frames for its actual top/bottom padding values, then:
+  - If an existing `--spacing-sN` already scales between that same
+    mobile/desktop pair (or close to it), use it.
+  - If none is a close match, add a new `--spacing-sN` (next unused
+    number) following the exact pattern the others use — a fluid `clamp()`
+    between two named `--spacing-*` tokens, scaling 375px→1440px like
+    `--spacing-s9` does — and give it a comment naming the section it's
+    for (e.g. `/* Home - Mission */`).
+  - Don't invent an arbitrary `py-[...]`/`clamp(...)` inline in the
+    component. The whole point of the `--spacing-sN` scale is that every
+    section's vertical rhythm traces back to a small shared set of steps
+    instead of each section growing its own bespoke value.

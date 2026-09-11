@@ -58,3 +58,19 @@ of them), so unlike every other `--type-size-*` token it doesn't alias any
 `var(--text-*)` primitive. Needs a real source: either an actual Figma
 variable to alias once found, or fold `SectionIntro`'s heading onto an
 existing role instead of keeping a one-off invented size.
+
+## Retrofit `tf-px` / `--spacing-sN` onto sections that predate the convention
+
+`docs/006-figma-to-code-conventions.md` now requires every section's inline
+padding to use `tf-px` and its block (vertical) spacing to use a
+`--spacing-sN` token. `MissionStatement` follows this (`tf-px` + `py-s9`),
+but these predate it and still use bespoke values:
+
+- `HeroTertiary`: `p-5 md:h-[42.5rem] md:p-10` — should be `tf-px` for the
+  inline padding, plus a `--spacing-sN` for the block spacing once its
+  mobile/desktop padding values are confirmed against Figma.
+- `app/faqs/page.tsx`'s `faq-section`: `px-10 py-24` (a fixed, non-fluid
+  pair) — same treatment.
+
+`VideoBand` is exempt (it's intentionally edge-to-edge with no section
+padding at all).
