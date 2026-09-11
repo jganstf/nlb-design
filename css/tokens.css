@@ -127,7 +127,7 @@
   --type-size-display-sm: clamp(3.6875rem, 3.6875rem + 1.3125 * ((100vw - 375px) / 1065), 5rem);
   --type-size-headline-2xl: clamp(2.6875rem, 2.6875rem + 2.3125 * ((100vw - 375px) / 1065), 5rem);
   --type-size-headline-xl: clamp(var(--text-3xl), calc(var(--text-3xl) + (var(--text-4xl) - var(--text-3xl)) * ((100vw - 375px) / 1065px)), var(--text-4xl));
-  --type-size-headline-lg: clamp(var(--text-3xl), calc(var(--text-3xl) + (var(--text-3xl) - var(--text-3xl)) * ((100vw - 375px) / 1065px)), var(--text-3xl));
+  --type-size-headline-lg: clamp(var(--text-2xl), calc(var(--text-2xl) + (var(--text-3xl) - var(--text-2xl)) * ((100vw - 375px) / 1065px)), var(--text-3xl));
   --type-size-headline-base: clamp(1.5rem, 1.5rem + 0.5 * ((100vw - 375px) / 1065), 2rem);
   --type-size-headline-sm: clamp(1.25rem, 1.25rem + 0.25 * ((100vw - 375px) / 1065), 1.5rem);
   --type-size-body-large: 1.25rem;
