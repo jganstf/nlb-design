@@ -126,8 +126,8 @@
   --type-size-display-base: clamp(5rem, 5rem + 1.25 * ((100vw - 375px) / 1065), 6.25rem);
   --type-size-display-sm: clamp(3.6875rem, 3.6875rem + 1.3125 * ((100vw - 375px) / 1065), 5rem);
   --type-size-headline-2xl: clamp(2.6875rem, 2.6875rem + 2.3125 * ((100vw - 375px) / 1065), 5rem);
-  --type-size-headline-xl: clamp(2.75rem, 2.75rem + 0.9375 * ((100vw - 375px) / 1065), 3.6875rem);
-  --type-size-headline-lg: clamp(2rem, 2rem + 0.75 * ((100vw - 375px) / 1065), 2.75rem);
+  --type-size-headline-xl: clamp(var(--text-3xl), calc(var(--text-3xl) + (var(--text-4xl) - var(--text-3xl)) * ((100vw - 375px) / 1065px)), var(--text-4xl));
+  --type-size-headline-lg: clamp(var(--text-3xl), calc(var(--text-3xl) + (var(--text-3xl) - var(--text-3xl)) * ((100vw - 375px) / 1065px)), var(--text-3xl));
   --type-size-headline-base: clamp(1.5rem, 1.5rem + 0.5 * ((100vw - 375px) / 1065), 2rem);
   --type-size-headline-sm: clamp(1.25rem, 1.25rem + 0.25 * ((100vw - 375px) / 1065), 1.5rem);
   --type-size-body-large: 1.25rem;
@@ -160,7 +160,7 @@
   --spacing-s6:  clamp(spacing-16, spacing-24); /* Basic - Left Right Text; Connect W Us - Contact Us */ 
   --spacing-s7:  clamp(spacing-16, spacing-32); /* Connect W Us - Join the team */ 
   --spacing-s8:  clamp(spacing-20, spacing-32); /* interactive map block */ 
-  --spacing-s9:  clamp(spacing-40, spacing-65); /* Hero - Tertiary Bottom */ 
+  --spacing-s9:  clamp(var(--spacing-10), calc(var(--spacing-10) + (var(--spacing-40) - var(--spacing-10)) * ((100vw - 375px) / 1065px)), var(--spacing-40)); /* Home - Mission */ 
 }
 
 @theme inline {

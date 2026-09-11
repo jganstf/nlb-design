@@ -36,3 +36,13 @@ value now.
 This is treatd as the hero on the base landing page and needs an h1 - using the text from the end of the video or we need to make the section that follows, Mission Statement, use an h1, but that secion may be used elsewhere and need to be an h2
 
 ## replace section spacing with dynamic utility classes
+
+## Fix --spacing-s1 through --spacing-s8
+
+`css/tokens.css` has `--spacing-s1` .. `--spacing-s8` (and, until just now,
+`s9`) defined as `clamp(spacing-N, spacing-M)` — only 2 arguments (invalid;
+`clamp()` requires min/preferred/max) and bare identifiers instead of
+`var(--spacing-N)`. These are all currently invalid CSS and resolve to
+nothing wherever used. `--spacing-s9` was just fixed as a 3-arg fluid clamp
+scaling 375px→1440px (see the "Home - Mission" comment); apply the same
+fix to s1-s8 using their existing min/max pairs and named use-case comments.
