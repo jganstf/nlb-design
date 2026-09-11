@@ -50,7 +50,7 @@ export default function NewsPreview({
             <a
               key={article.title}
               href={article.href}
-              className="news-preview-card flex min-h-[33.75rem] w-full min-w-0 flex-col items-start justify-between overflow-clip bg-background p-8"
+              className="news-preview-card flex w-full min-w-0 flex-col items-start gap-8 overflow-clip bg-background p-8"
             >
               <div className="news-preview-card-body flex w-full flex-col items-start gap-5">
                 <div className="news-preview-card-image relative h-[16.5rem] w-full shrink-0">
@@ -79,7 +79,7 @@ export default function NewsPreview({
           ))}
           <a
             href={ctaHref}
-            className="news-preview-cta relative flex min-h-[33.75rem] w-full min-w-0 flex-col items-start justify-between overflow-clip bg-accent-secondary p-10 md:min-h-[20rem] md:col-span-2 lg:min-h-[33.75rem] lg:col-span-1"
+            className="news-preview-cta relative flex w-full min-w-0 flex-col items-start justify-between gap-8 overflow-clip bg-accent-secondary p-10 md:col-span-2 lg:col-span-1"
           >
             <Image
               src="/svg/decorative-line-news.svg"
