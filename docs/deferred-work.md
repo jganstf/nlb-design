@@ -27,3 +27,14 @@ in the design system is currently inert.
 **Fix:** rename the `next/font` CSS variables (e.g. `--font-serif-loaded`) in
 `app/layout.tsx` and reference those from `tokens.css`, or drop the
 self-reference and let `@theme inline` do the aliasing instead.
+
+## Revisit inline-utility vs. `@utility` styling convention
+
+Every component so far (`FaqItem`, `SectionIntro`, `HeroTertiary`, the cards)
+uses a semantic class name in the JSX with matching styles defined as an
+`@utility` in `css/components/*.css`, rather than inline Tailwind utility
+classes. This was a deliberate choice for consistency with the existing
+pattern, not a measured decision — Tailwind only emits CSS for classes it
+detects as used either way, so the generated-CSS-size tradeoff between the
+two approaches hasn't actually been verified. Worth a real look if the
+component CSS ever grows large enough to matter.

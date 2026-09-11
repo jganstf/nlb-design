@@ -63,6 +63,7 @@
   font-size: var(--text-headline-xl);
   line-height: 1.1;
   color: var(--color-on-background);
+  text-wrap: pretty;
 }
 
 @media (max-width: 767px) {
