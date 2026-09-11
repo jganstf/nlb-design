@@ -42,7 +42,7 @@ export default function NewsPreview({
       className={`news-preview overflow-x-clip bg-background tf-px py-s6 ${className ?? ""}`}
     >
       <div className="flex w-full flex-col items-start gap-10 tf-max-w">
-        <h2 className="news-preview-heading w-full text-headline-xl leading-[1.1] text-on-background">
+        <h2 className="news-preview-heading w-full text-headline-xl text-on-background">
           {heading}
         </h2>
         <div className="news-preview-list grid w-full grid-cols-1 gap-px border border-border-light bg-border-light md:grid-cols-2 lg:grid-cols-3">
@@ -62,7 +62,7 @@ export default function NewsPreview({
                     className="object-cover"
                   />
                 </div>
-                <p className="news-preview-card-title w-full text-headline-base leading-[1.1] text-on-background">
+                <p className="news-preview-card-title w-full text-headline-base text-on-background">
                   {article.title}
                 </p>
               </div>
@@ -88,7 +88,7 @@ export default function NewsPreview({
               fill
               className="news-preview-cta-line pointer-events-none absolute inset-0 z-0 size-full object-cover object-center"
             />
-            <p className="news-preview-cta-heading relative z-10 w-full text-headline-base leading-[1.1] text-on-accent-secondary text-balance">
+            <p className="news-preview-cta-heading relative z-10 w-full text-headline-base text-on-accent-secondary text-balance">
               {ctaHeading}
             </p>
             <div className="news-preview-cta-footer relative z-10 flex w-full items-end justify-between gap-4">

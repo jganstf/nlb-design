@@ -135,3 +135,23 @@ one built by hand for that section:
     component. The whole point of the `--spacing-sN` scale is that every
     section's vertical rhythm traces back to a small shared set of steps
     instead of each section growing its own bespoke value.
+
+## Don't carry over `leading-[...]`/`tracking-[...]` already baked into a type utility
+
+The reference code from `get_design_context` writes every text node's
+line-height and letter-spacing out explicitly (e.g. `leading-[1.1]`,
+`tracking-[2px]`) because it has no concept of this codebase's type scale.
+But every `text-headline-*` utility (`text-headline-2xl` down to
+`text-headline-sm`) already applies `line-height: 1.1` via `text-heading-base`
+in `css/tokens.css` — so pasting `leading-[1.1]` alongside `text-headline-base`
+etc. is redundant (harmless when the value matches, but dead weight, and a
+silent bug the moment `text-heading-base`'s line-height ever changes, since
+the arbitrary value on the element wins and quietly stops tracking it).
+
+Before adding a `leading-[...]`/`tracking-[...]` arbitrary value next to a
+`text-headline-*`/`text-body-*`/`text-display-*` utility, check whether that
+utility (or a shared base it `@apply`s, like `text-heading-base`) already
+sets it in `css/tokens.css`. If it does, drop the arbitrary value entirely.
+`text-body-*` sizes currently do **not** bake in a line-height, so
+`leading-[1.6]` on body/mono text is legitimate — this only applies to
+values a utility already provides.
