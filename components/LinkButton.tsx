@@ -1,25 +1,19 @@
 type LinkButtonProps = {
   label: string;
   href: string;
-  accent?: boolean;
   className?: string;
 };
 
-export default function LinkButton({
-  label,
-  href,
-  accent = false,
-  className,
-}: LinkButtonProps) {
+export default function LinkButton({ label, href, className }: LinkButtonProps) {
   return (
     <a
       href={href}
-      className={`link-button flex h-12 items-center gap-2 px-5 font-mono text-body-base text-on-primary ${className ?? ""}`}
+      className={`link-button group flex h-12 items-center gap-2 px-5 font-mono text-body-base text-on-primary ${className ?? ""}`}
     >
       {label}
       <svg
         viewBox="0 0 24 24"
-        className={`link-button-icon size-6 shrink-0 ${accent ? "text-secondary" : "text-on-primary"}`}
+        className="link-button-icon size-6 shrink-0 text-on-primary transition-colors group-hover:text-secondary"
         fill="none"
         aria-hidden="true"
       >

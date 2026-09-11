@@ -12,7 +12,7 @@ export default function Home() {
       <MissionStatement
         heading="Preserving Nantucket’s open spaces for the public while adapting to the island’s needs with balance, simplicity, and care."
         links={[
-          { label: "Agriculture", href: "#", accent: true },
+          { label: "Agriculture", href: "#" },
           { label: "Conservation", href: "#" },
           { label: "Recreation", href: "#" },
         ]}
