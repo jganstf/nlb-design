@@ -1,4 +1,3 @@
-import Image from "next/image";
 import IconButton from "@/components/IconButton";
 
 type FooterColumn = {
@@ -73,20 +72,30 @@ export default function Footer({ className }: { className?: string }) {
     <footer
       className={`site__footer relative overflow-clip bg-accent-secondary tf-px py-10 ${className ?? ""}`}
     >
-      <Image
-        src="/svg/decorative-line-footer-mobile.svg"
-        alt=""
+      <div
         aria-hidden="true"
-        fill
-        className="pointer-events-none absolute inset-0 z-0 size-full object-cover object-center md:hidden"
-      />
-      <Image
-        src="/svg/decorative-line-footer.svg"
-        alt=""
+        className="pointer-events-none absolute left-[calc(50%+0.5px)] top-[-103px] h-[760px] w-[4758px] -translate-x-1/2 md:hidden"
+      >
+        <div className="absolute inset-[0_0_-112.08%_0]">
+          <img
+            alt=""
+            src="/svg/decorative-line-footer-mobile.svg"
+            className="block size-full max-w-none"
+          />
+        </div>
+      </div>
+      <div
         aria-hidden="true"
-        fill
-        className="pointer-events-none absolute inset-0 z-0 hidden size-full object-cover object-center md:block"
-      />
+        className="pointer-events-none absolute left-1/2 top-[-103px] hidden h-[760px] w-[4758px] -translate-x-1/2 md:block"
+      >
+        <div className="absolute inset-[-81.32%_0_-19.43%_0]">
+          <img
+            alt=""
+            src="/svg/decorative-line-footer.svg"
+            className="block size-full max-w-none"
+          />
+        </div>
+      </div>
 
       <div className="relative z-10 flex w-full flex-col gap-16 tf-max-w md:gap-20">
         {/* Signup + social */}

@@ -138,7 +138,9 @@
   
   /* Todo: */
   --spacing-5:   1.25rem; /*  20px */
+  --spacing-8:   2.00rem; /*  32px */
   --spacing-10:  2.50rem; /*  40px */
+  --spacing-12:  3.00rem; /*  48px */
   --spacing-16:  4.00rem; /*  64px */
   --spacing-20:  5.00rem; /*  80px */
   --spacing-24:  6.00rem; /*  96px */
@@ -151,17 +153,17 @@
   --spacing-gap-lg: var(--spacing-10);
   --spacing-gap-xl: var(--spacing-16);
 
-  --spacing-inline: clamp(spacing-5, spacing-10);
+  --spacing-inline: clamp(var(--spacing-5), calc(var(--spacing-5) + (var(--spacing-10) - var(--spacing-5)) * ((100vw - 375px) / 1065px)), var(--spacing-10));
 
-  --spacing-s1:  clamp( spacing-5, spacing-10); /* Hero - Tertiary Top */
-  --spacing-s2:  clamp( spacing-8, spacing-10); /* Hero - Secondary */
-  --spacing-s3:  clamp(spacing-10, spacing-16); /* interactive map block */ 
-  --spacing-s4:  clamp(spacing-12, spacing-20); 
-  --spacing-s5:  clamp(spacing-16, spacing-20); /* Image Carousel */
-  --spacing-s6:  clamp(spacing-16, spacing-24); /* Basic - Left Right Text; Connect W Us - Contact Us */ 
-  --spacing-s7:  clamp(spacing-16, spacing-32); /* Connect W Us - Join the team */ 
-  --spacing-s8:  clamp(spacing-20, spacing-32); /* interactive map block */ 
-  --spacing-s9:  clamp(var(--spacing-20), calc(var(--spacing-20) + (var(--spacing-40) - var(--spacing-20)) * ((100vw - 375px) / 1065px)), var(--spacing-40)); /* Home - Mission */ 
+  --spacing-s1:  clamp(var(--spacing-5), calc(var(--spacing-5) + (var(--spacing-10) - var(--spacing-5)) * ((100vw - 375px) / 1065px)), var(--spacing-10)); /* Hero - Tertiary Top */
+  --spacing-s2:  clamp(var(--spacing-8), calc(var(--spacing-8) + (var(--spacing-10) - var(--spacing-8)) * ((100vw - 375px) / 1065px)), var(--spacing-10)); /* Hero - Secondary */
+  --spacing-s3:  clamp(var(--spacing-10), calc(var(--spacing-10) + (var(--spacing-16) - var(--spacing-10)) * ((100vw - 375px) / 1065px)), var(--spacing-16)); /* interactive map block */
+  --spacing-s4:  clamp(var(--spacing-12), calc(var(--spacing-12) + (var(--spacing-20) - var(--spacing-12)) * ((100vw - 375px) / 1065px)), var(--spacing-20));
+  --spacing-s5:  clamp(var(--spacing-16), calc(var(--spacing-16) + (var(--spacing-20) - var(--spacing-16)) * ((100vw - 375px) / 1065px)), var(--spacing-20)); /* Image Carousel */
+  --spacing-s6:  clamp(var(--spacing-16), calc(var(--spacing-16) + (var(--spacing-24) - var(--spacing-16)) * ((100vw - 375px) / 1065px)), var(--spacing-24)); /* Basic - Left Right Text; Connect W Us - Contact Us */
+  --spacing-s7:  clamp(var(--spacing-16), calc(var(--spacing-16) + (var(--spacing-32) - var(--spacing-16)) * ((100vw - 375px) / 1065px)), var(--spacing-32)); /* Connect W Us - Join the team */
+  --spacing-s8:  clamp(var(--spacing-20), calc(var(--spacing-20) + (var(--spacing-32) - var(--spacing-20)) * ((100vw - 375px) / 1065px)), var(--spacing-32)); /* interactive map block */
+  --spacing-s9:  clamp(var(--spacing-20), calc(var(--spacing-20) + (var(--spacing-40) - var(--spacing-20)) * ((100vw - 375px) / 1065px)), var(--spacing-40)); /* Home - Mission */
 }
 
 @theme inline {
@@ -320,5 +322,5 @@
 @utility text-headline-2xl { @apply text-heading-base; }
 @utility text-headline-xl  { @apply text-heading-base; }
 @utility text-headline-lg  { @apply text-heading-base; }
-@utility text-headline-md  { @apply text-heading-base; }
+@utility text-headline-base  { @apply text-heading-base; }
 @utility text-headline-sm  { @apply text-heading-base; }
