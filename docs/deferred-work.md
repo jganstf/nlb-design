@@ -25,3 +25,14 @@ convention postdates `HeroTertiary`, `SectionIntro`, and the FAQs page
 `md:h-[42.5rem]`/`md:w-[42.5rem]` card size. Worth revisiting these against
 the grid once there's a second section to compare against, to confirm the
 column math before converting.
+
+`MissionStatement`'s content column was also dropped to `w-full` (no
+max-width) for the same reason — Figma showed it as `max-w-[988px]`, but
+that's unverified against real column math with no grid wrapper built yet.
+Confirm the column span once the grid exists, rather than guessing a rem
+value now.
+
+## VideoBand
+This is treatd as the hero on the base landing page and needs an h1 - using the text from the end of the video or we need to make the section that follows, Mission Statement, use an h1, but that secion may be used elsewhere and need to be an h2
+
+## replace section spacing with dynamic utility classes

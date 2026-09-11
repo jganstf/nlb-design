@@ -27,15 +27,19 @@ placement instead of a static size:
   (e.g. `col-span-12 md:col-span-6`) instead of just scaling one fixed
   layout down.
 
-For anything that isn't tracking the column grid (a genuine max line-length
-on a paragraph, an icon's fixed size, a decorative element), fall back to
-the simpler rule:
+For anything that isn't clearly tracking the column grid, don't guess and
+don't carry the pixel/rem value over — not even for a "looks like a line
+length cap" max-width. There's no `grid-cols-12` wrapper built in this
+codebase yet to verify the column math against, so a static `max-w-[...]`
+copied from the Figma frame is unverified either way. Instead:
 
-- Prefer `w-full`, `flex-1`, `max-w-full` over an arbitrary fixed width.
-- A max-width that exists to cap line length or a content column is fine
-  (e.g. `max-w-[42rem]` on a paragraph) — that's a real design constraint.
-  A max-width that's just "however wide the Figma frame happened to be"
-  is not — drop it, or express it as a grid `col-span` instead.
+- Use `w-full` (or `flex-1`, `max-w-full`) with no width constraint, so the
+  element just fills its container.
+- Add a note to `docs/deferred-work.md` naming the component/element and
+  the max-width Figma showed, so it gets revisited once the 12-column grid
+  wrapper exists and the value can be expressed as a real `col-span`/
+  `col-start` (or confirmed as a genuine line-length cap, converted to a
+  proper `rem` value at that point).
 - Fixed heights on content-bearing containers (cards, text blocks) should
   almost always become `min-h-*`, `aspect-*`, or no explicit height at all,
   so content and different viewport sizes don't get clipped or awkwardly
@@ -49,6 +53,7 @@ or rem value. A decorative SVG sized in `px`/`rem` will be the wrong size
 the moment the container isn't exactly the Figma artboard's width.
 
 When in doubt: ask "does this number represent a real design constraint
-(a max line length, an intentional aspect ratio, an icon's fixed size), or
-is it just the width of the Figma frame I happened to select?" Only the
-former belongs in the component.
+(an intentional aspect ratio, an icon's fixed size), or is it a width/max-width
+that might be tracking the grid?" Fixed sizes for things like icons are fine
+to keep. Any width or max-width is guilty until proven innocent — default to
+`w-full` and a `deferred-work.md` note rather than carrying over the number.
