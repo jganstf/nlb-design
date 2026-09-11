@@ -4,6 +4,19 @@ Practices for turning a Figma frame (via `get_design_context`) into a
 component in this codebase, beyond what `figma-design-to-code` already
 covers.
 
+## Mobile vs. desktop breakpoint: use `lg:`
+
+Sections are typically handed to us as two separate Figma mockups — a
+mobile frame and a desktop frame — not a single responsive spec. When
+implementing a section from both, treat the mobile mockup's values as the
+base (unprefixed) classes and gate the desktop mockup's values behind
+Tailwind's `lg:` breakpoint (1024px), not `sm:`/`md:`. This keeps every
+section switching between "mobile mockup" and "desktop mockup" at the same
+consistent point, rather than each component picking its own breakpoint.
+If a component only ever needs one differing property, it still gets its
+own `lg:` variant (e.g. `gap-16 lg:gap-20`) — don't reach for `md:` just
+because the change is small.
+
 ## Don't carry over fixed widths/heights from the Figma frame
 
 The reference code from `get_design_context` bakes in the exact pixel/rem

@@ -74,3 +74,11 @@ but these predate it and still use bespoke values:
 
 `VideoBand` is exempt (it's intentionally edge-to-edge with no section
 padding at all).
+
+## Retrofit `lg:` as the mobile/desktop breakpoint
+
+`docs/006-figma-to-code-conventions.md` now specifies `lg:` (1024px) as the
+one breakpoint for switching between a section's mobile and desktop Figma
+mockups. `HeroTertiary` and `SectionIntro` predate this and use `md:`
+instead — worth switching once there's a reason to touch them again, so
+every section breaks at the same point.
