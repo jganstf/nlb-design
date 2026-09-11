@@ -19,7 +19,7 @@ export default function VideoBand({
 
   return (
     <div
-      className={`video-band relative aspect-[1440/800] w-full overflow-clip ${className ?? ""}`}
+      className={`video-band relative aspect-[375/548] w-full overflow-clip lg:aspect-[1440/800] ${className ?? ""}`}
     >
       <video
         ref={videoRef}
