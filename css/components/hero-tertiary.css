@@ -1,0 +1,79 @@
+/**
+ * https://www.figma.com/design/jDXhDNzEJS26VpXp9JWzIv/Nantucket---Website?node-id=1910-12149&m=dev
+ *
+ * "Hero - Tertiary" — a page-header image with a content card (eyebrow +
+ * serif headline) overlaid on top, used for interior pages like FAQs.
+ */
+@utility hero-tertiary {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 42.5rem;
+  overflow: clip;
+  padding: var(--spacing-10);
+}
+
+@utility hero-tertiary-image {
+  object-fit: cover;
+  z-index: 0;
+}
+
+@utility hero-tertiary-card {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: 42.5rem;
+  max-width: 100%;
+  height: 23.75rem;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: clip;
+  border-radius: 4px;
+  background-color: var(--color-background);
+  padding: var(--spacing-10);
+}
+
+@utility hero-tertiary-line {
+  position: absolute;
+  inset: -30% -60%;
+  z-index: 0;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+@utility hero-tertiary-eyebrow {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-mono);
+  font-size: var(--text-body-small);
+  line-height: 1.6;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-on-background);
+}
+
+@utility hero-tertiary-heading {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-serif);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--text-headline-xl);
+  line-height: 1.1;
+  color: var(--color-on-background);
+}
+
+@media (max-width: 767px) {
+  .hero-tertiary {
+    height: auto;
+    padding: var(--spacing-5);
+  }
+
+  .hero-tertiary-card {
+    width: 100%;
+    height: auto;
+    gap: var(--spacing-gap-md);
+  }
+}
