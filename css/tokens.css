@@ -126,7 +126,7 @@
   --type-size-display-base: clamp(var(--text-5xl), calc(var(--text-5xl) + (var(--text-6xl) - var(--text-5xl)) * ((100vw - 375px) / 1065px)), var(--text-6xl));
   --type-size-display-sm: clamp(var(--text-4xl), calc(var(--text-4xl) + (var(--text-5xl) - var(--text-4xl)) * ((100vw - 375px) / 1065px)), var(--text-5xl));
   /* todo: design missing */
-  --type-size-headline-2xl: clamp(2.6875rem, 2.6875rem + 2.3125 * ((100vw - 375px) / 1065), 5rem);
+  --type-size-headline-2xl: clamp(2.6875rem, calc(2.6875rem + 2.3125rem * ((100vw - 375px) / 1065px)), 5rem);
   --type-size-headline-xl: clamp(var(--text-3xl), calc(var(--text-3xl) + (var(--text-4xl) - var(--text-3xl)) * ((100vw - 375px) / 1065px)), var(--text-4xl));
   --type-size-headline-lg: clamp(var(--text-2xl), calc(var(--text-2xl) + (var(--text-3xl) - var(--text-2xl)) * ((100vw - 375px) / 1065px)), var(--text-3xl));
   --type-size-headline-base: clamp(var(--text-xl), calc(var(--text-xl) + (var(--text-2xl) - var(--text-xl)) * ((100vw - 375px) / 1065px)), var(--text-2xl));
@@ -311,6 +311,7 @@
 @utility text-display-base {
   /* font-family: var(--font-family-font-serif, "EB Garamond"); */
   font-family: var(--font-serif);
+  font-size: var(--text-display-base);
 }
 
 @utility text-heading-base {
@@ -319,8 +320,8 @@
   line-height: 1.1;
 }
 
-@utility text-headline-2xl { @apply text-heading-base; }
-@utility text-headline-xl  { @apply text-heading-base; }
-@utility text-headline-lg  { @apply text-heading-base; }
-@utility text-headline-base  { @apply text-heading-base; }
-@utility text-headline-sm  { @apply text-heading-base; }
+@utility text-headline-2xl { @apply text-heading-base; font-size: var(--text-headline-2xl); }
+@utility text-headline-xl  { @apply text-heading-base; font-size: var(--text-headline-xl); }
+@utility text-headline-lg  { @apply text-heading-base; font-size: var(--text-headline-lg); }
+@utility text-headline-base  { @apply text-heading-base; font-size: var(--text-headline-base); }
+@utility text-headline-sm  { @apply text-heading-base; font-size: var(--text-headline-sm); }

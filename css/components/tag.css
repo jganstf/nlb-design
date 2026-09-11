@@ -1,0 +1,10 @@
+@utility tag-label {
+  white-space: nowrap;
+  overflow-wrap: break-word;
+  font-family: var(--font-mono);
+  font-size: var(--text-body-small);
+  line-height: 1.6;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-on-tag);
+}
