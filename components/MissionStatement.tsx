@@ -37,7 +37,7 @@ export default function MissionStatement({
         <h2 className="mission-statement-heading w-full text-center text-headline-xl text-on-background text-pretty">
           {heading}
         </h2>
-        <div className="mission-statement-links flex flex-wrap items-center justify-center gap-20">
+        <div className="mission-statement-links flex flex-col items-center gap-6 md:flex-row md:flex-wrap md:justify-center md:gap-20">
           {links.map((link) => (
             <LinkButton key={link.label} {...link} />
           ))}
