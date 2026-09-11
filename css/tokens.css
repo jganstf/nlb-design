@@ -125,6 +125,7 @@
   --type-size-display-lg: clamp(6.25rem, 6.25rem + 1.25 * ((100vw - 375px) / 1065), 7.5rem);
   --type-size-display-base: clamp(5rem, 5rem + 1.25 * ((100vw - 375px) / 1065), 6.25rem);
   --type-size-display-sm: clamp(3.6875rem, 3.6875rem + 1.3125 * ((100vw - 375px) / 1065), 5rem);
+  --type-size-headline-2xl: clamp(2.6875rem, 2.6875rem + 2.3125 * ((100vw - 375px) / 1065), 5rem);
   --type-size-headline-xl: clamp(2.75rem, 2.75rem + 0.9375 * ((100vw - 375px) / 1065), 3.6875rem);
   --type-size-headline-lg: clamp(2rem, 2rem + 0.75 * ((100vw - 375px) / 1065), 2.75rem);
   --type-size-headline-base: clamp(1.5rem, 1.5rem + 0.5 * ((100vw - 375px) / 1065), 2rem);
@@ -146,6 +147,7 @@
 
   --spacing-gap-sm: calc(var(--spacing) * 3);
   --spacing-gap-md: calc(var(--spacing) * 6);
+  --spacing-gap-lg: var(--spacing-10);
   --spacing-gap-xl: var(--spacing-16);
 
   --spacing-inline: clamp(spacing-5, spacing-10);
@@ -186,6 +188,7 @@
   --text-display-lg: var(--type-size-display-lg);
   --text-display-base: var(--type-size-display-base);
   --text-display-sm: var(--type-size-display-sm);
+  --text-headline-2xl: var(--type-size-headline-2xl);
   --text-headline-xl: var(--type-size-headline-xl);
   --text-headline-lg: var(--type-size-headline-lg);
   --text-headline-base: var(--type-size-headline-base);

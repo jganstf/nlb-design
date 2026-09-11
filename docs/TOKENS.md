@@ -145,6 +145,7 @@ stays a fixed value. `@theme inline` exposes each role as a `text-*` utility.
 | `display-lg` | 100px | 120px | fluid | `text-display-lg` |
 | `display-base` | 80px | 100px | fluid | `text-display-base` |
 | `display-sm` | 59px | 80px | fluid | `text-display-sm` |
+| `headline-2xl` | 43px | 80px | fluid | `text-headline-2xl` |
 | `headline-xl` | 44px | 59px | fluid | `text-headline-xl` |
 | `headline-lg` | 32px | 44px | fluid | `text-headline-lg` |
 | `headline-base` | 24px | 32px | fluid | `text-headline-base` |
