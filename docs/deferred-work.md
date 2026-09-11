@@ -46,3 +46,15 @@ This is treatd as the hero on the base landing page and needs an h1 - using the 
 nothing wherever used. `--spacing-s9` was just fixed as a 3-arg fluid clamp
 scaling 375px→1440px (see the "Home - Mission" comment); apply the same
 fix to s1-s8 using their existing min/max pairs and named use-case comments.
+
+## `--type-size-headline-2xl` isn't a real Figma token
+
+It was added as a guess (43px→80px, hardcoded literals) when building
+`SectionIntro`, for an 80px headline that didn't match any existing
+`type-size` role. It's not part of the actual Figma `type-size` variable
+collection (confirmed against the full role list — display-lg/base/sm,
+headline-xl/lg/base/sm, body-large/base/small/xs — headline-2xl isn't one
+of them), so unlike every other `--type-size-*` token it doesn't alias any
+`var(--text-*)` primitive. Needs a real source: either an actual Figma
+variable to alias once found, or fold `SectionIntro`'s heading onto an
+existing role instead of keeping a one-off invented size.
