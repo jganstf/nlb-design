@@ -154,3 +154,11 @@ stays a fixed value. `@theme inline` exposes each role as a `text-*` utility.
 | `body-base` | 16px | 16px | fixed | `text-body-base` |
 | `body-small` | 14px | 14px | fixed | `text-body-small` |
 | `body-xs` | 10px | 10px | fixed | `text-body-xs` |
+
+Every `text-headline-*` utility (`2xl` down to `sm`) already applies
+`font-family: var(--font-serif)` via the shared `text-heading-base` utility in
+`tokens.css` (along with a default `letter-spacing`/`line-height`) — do not
+add `font-serif` alongside `text-headline-*` in a className, it's redundant.
+`text-display-*` does **not** get this treatment (only `text-display-base`
+currently sets a font-family, which looks like an oversight rather than a
+rule) — add `font-serif` explicitly whenever you use a `text-display-*` size.

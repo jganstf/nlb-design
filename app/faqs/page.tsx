@@ -56,29 +56,35 @@ export default function FaqsPage() {
         imageSrc="/images/hero-faqs.png"
         imageAlt="Wildflowers on a Nantucket conservation property"
       />
-      <section className="faq-section">
+      <section className="faq-section relative flex w-full overflow-clip bg-background px-10 py-24">
         <Image
           src="/svg/decorative-line-faqs.svg"
           alt=""
           aria-hidden="true"
           width={2102}
           height={284}
-          className="faq-section-line"
+          className="faq-section-line pointer-events-none absolute top-48 left-1/2 z-0 w-[150%] max-w-none -translate-x-1/2"
         />
-        <div className="faq-section-inner">
-          <h2 className="faq-section-title text-on-background text-headline-xl">FAQs</h2>
-          <div className="faq-groups">
-            <div className="faq-group">
-              <h3 className="faq-group-title">General FAQ</h3>
-              <div className="faq-group-list">
+        <div className="faq-section-inner relative z-10 mx-auto flex w-full max-w-[85rem] flex-col items-start gap-10 lg:flex-row lg:flex-wrap lg:justify-between">
+          <h2 className="faq-section-title text-headline-xl font-normal leading-none text-on-background">
+            FAQs
+          </h2>
+          <div className="faq-groups flex max-w-[42rem] flex-col items-start gap-16">
+            <div className="faq-group flex w-full flex-col items-start gap-6">
+              <h3 className="faq-group-title text-headline-base font-normal leading-[1.1] text-on-background">
+                General FAQ
+              </h3>
+              <div className="faq-group-list flex w-full flex-col items-start gap-5">
                 {GENERAL_FAQS.map((faq) => (
                   <FaqItem key={faq.question} {...faq} />
                 ))}
               </div>
             </div>
-            <div className="faq-group">
-              <h3 className="faq-group-title">Form Filing</h3>
-              <div className="faq-group-list">
+            <div className="faq-group flex w-full flex-col items-start gap-6">
+              <h3 className="faq-group-title text-headline-base font-normal leading-[1.1] text-on-background">
+                Form Filing
+              </h3>
+              <div className="faq-group-list flex w-full flex-col items-start gap-5">
                 {FORM_FILING_FAQS.map((faq) => (
                   <FaqItem key={faq.question} {...faq} />
                 ))}
