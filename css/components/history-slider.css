@@ -1,0 +1,13 @@
+/* Visible keyboard focus indicator (WCAG 2.4.7) for the arrow controls. */
+.history-slider-arrow:focus-visible {
+  outline: 2px solid var(--color-dusty-heath-300);
+  outline-offset: 2px;
+}
+
+/* Respect the OS-level motion preference: skip the dot's eased travel and
+   Splide's slide transition for users sensitive to motion. */
+@media (prefers-reduced-motion: reduce) {
+  .history-slider .splide__list {
+    transition-duration: 0s !important;
+  }
+}
