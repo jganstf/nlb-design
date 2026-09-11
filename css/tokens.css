@@ -160,7 +160,7 @@
   --spacing-s6:  clamp(spacing-16, spacing-24); /* Basic - Left Right Text; Connect W Us - Contact Us */ 
   --spacing-s7:  clamp(spacing-16, spacing-32); /* Connect W Us - Join the team */ 
   --spacing-s8:  clamp(spacing-20, spacing-32); /* interactive map block */ 
-  --spacing-s9:  clamp(var(--spacing-10), calc(var(--spacing-10) + (var(--spacing-40) - var(--spacing-10)) * ((100vw - 375px) / 1065px)), var(--spacing-40)); /* Home - Mission */ 
+  --spacing-s9:  clamp(var(--spacing-20), calc(var(--spacing-20) + (var(--spacing-40) - var(--spacing-20)) * ((100vw - 375px) / 1065px)), var(--spacing-40)); /* Home - Mission */ 
 }
 
 @theme inline {
