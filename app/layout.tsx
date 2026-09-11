@@ -3,17 +3,17 @@ import { EB_Garamond, DM_Sans, DM_Mono } from "next/font/google";
 import "../css/globals.css";
 
 const fontSerif = EB_Garamond({
-  variable: "--font-serif",
+  variable: "--font-serif-loaded",
   subsets: ["latin"],
 });
 
 const fontSans = DM_Sans({
-  variable: "--font-sans",
+  variable: "--font-sans-loaded",
   subsets: ["latin"],
 });
 
 const fontMono = DM_Mono({
-  variable: "--font-mono",
+  variable: "--font-mono-loaded",
   weight: ["400", "500"],
   subsets: ["latin"],
 });

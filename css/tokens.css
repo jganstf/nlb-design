@@ -5,9 +5,9 @@
  */
 :root {
   /* ---- Primitive: font ---- */
-  --font-serif: var(--font-serif), "EB Garamond", serif;
-  --font-sans: var(--font-sans), "DM Sans", sans-serif;
-  --font-mono: var(--font-mono), "DM Mono", monospace;
+  --font-serif: var(--font-serif-loaded), "EB Garamond", serif;
+  --font-sans: var(--font-sans-loaded), "DM Sans", sans-serif;
+  --font-mono: var(--font-mono-loaded), "DM Mono", monospace;
 
   --font-weight-regular: 400;
 
@@ -288,12 +288,19 @@
 
 
 /* todo: ; margin */
+@utility text-display-base {
+  /* font-family: var(--font-family-font-serif, "EB Garamond"); */
+  font-family: var(--font-serif);
+}
+
 @utility text-heading-base {
+  font-family: var(--font-serif);
   letter-spacing: -0.05em;
   line-height: 1.1;
 }
 
-@utility text-heading-xl { @apply text-heading-base; }
-@utility text-heading-lg { @apply text-heading-base; }
-@utility text-heading-md { @apply text-heading-base; }
-@utility text-heading-sm { @apply text-heading-base; }
+@utility text-headline-2xl { @apply text-heading-base; }
+@utility text-headline-xl  { @apply text-heading-base; }
+@utility text-headline-lg  { @apply text-heading-base; }
+@utility text-headline-md  { @apply text-heading-base; }
+@utility text-headline-sm  { @apply text-heading-base; }
