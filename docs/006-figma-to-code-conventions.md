@@ -4,6 +4,38 @@ Practices for turning a Figma frame (via `get_design_context`) into a
 component in this codebase, beyond what `figma-design-to-code` already
 covers.
 
+## Never build a Tailwind class name via string interpolation
+
+Tailwind's build-time scanner finds classes by looking for literal
+substrings in the source text — it does not execute the code. A class name
+that's split across a template-literal interpolation, like
+`` `button-${variant}` `` or `` `text-left${maybe}` ``, never appears as a
+complete string anywhere in the file, so Tailwind never generates CSS for
+it — the class silently does nothing at runtime, no error, no warning. This
+has broken two components already (a missing `text-left` and, later, every
+`button`/`icon-button` variant color).
+
+The fix is always the same: make every possible full class name appear as
+a literal string somewhere in the source. A lookup object/map works well
+for variant props:
+
+```tsx
+const VARIANT_CLASSES = {
+  primary: "button-primary",
+  secondary: "button-secondary",
+  ghost: "button-ghost",
+} as const;
+// ...
+className={`button ${VARIANT_CLASSES[variant]}`}
+```
+
+A ternary with two full literal strings is also fine (`` `${cond ? "gap-2" : "gap-4"}` ``)
+— the rule is specifically about a literal prefix/suffix getting torn away
+from a `${...}` expression, not about conditionals in general. When
+appending an optional caller-supplied `className`, keep a space before the
+`${className ?? ""}` so the last real utility class isn't butted up against
+the expression either.
+
 ## Mobile vs. desktop breakpoint: use `md:`
 
 Sections are typically handed to us as two separate Figma mockups — a
