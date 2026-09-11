@@ -75,10 +75,11 @@ but these predate it and still use bespoke values:
 `VideoBand` is exempt (it's intentionally edge-to-edge with no section
 padding at all).
 
-## Retrofit `lg:` as the mobile/desktop breakpoint
+## `HeroTertiary`/`SectionIntro`'s `md:` breakpoint is now correct by coincidence
 
-`docs/006-figma-to-code-conventions.md` now specifies `lg:` (1024px) as the
-one breakpoint for switching between a section's mobile and desktop Figma
-mockups. `HeroTertiary` and `SectionIntro` predate this and use `md:`
-instead — worth switching once there's a reason to touch them again, so
-every section breaks at the same point.
+They predate `docs/006-figma-to-code-conventions.md`'s `md:` breakpoint
+convention (briefly documented as `lg:`, changed back to `md:` after
+checking against `VideoBand`'s mobile mockup) but happen to already use
+`md:`. Not verified against their own mobile/desktop mockups, though — the
+match is coincidental, not confirmed. Worth double-checking their actual
+switch-over values once there's a reason to touch them again.

@@ -32,12 +32,12 @@ export default function MissionStatement({
         fill
         className="mission-statement-line pointer-events-none absolute inset-0 z-0 size-full object-cover object-center"
       />
-      <div className="mission-statement-content relative z-10 flex w-full flex-col items-center gap-16 max-w-[62.375rem] lg:gap-20">
+      <div className="mission-statement-content relative z-10 flex w-full flex-col items-center gap-16 max-w-[62.375rem] md:gap-20">
         <Tag label={eyebrow} />
         <h2 className="mission-statement-heading w-full text-center text-headline-xl text-on-background text-pretty">
           {heading}
         </h2>
-        <div className="mission-statement-links flex flex-col items-center gap-6 lg:flex-row lg:flex-wrap lg:justify-center lg:gap-20">
+        <div className="mission-statement-links flex flex-col items-center gap-6 md:flex-row md:flex-wrap md:justify-center md:gap-20">
           {links.map((link) => (
             <LinkButton key={link.label} {...link} />
           ))}
