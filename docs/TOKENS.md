@@ -133,22 +133,23 @@ defined in the source file yet).
 ## Responsive type scale (`type-size`)
 
 The Figma `type-size` collection has two modes, `mobile` and `desktop`, each
-aliasing a different `font/size` primitive per role. In CSS this is modeled as
-mobile-first custom properties on `:root`, overridden by the desktop values
-inside `@media (min-width: 1024px)` — matching Tailwind's `lg:` breakpoint.
-`@theme inline` then exposes each role as a `text-*` utility that automatically
-resizes at the breakpoint (no `lg:` prefix needed in markup).
+aliasing a different `font/size` primitive per role. `display-*` and
+`headline-*` differ between the two modes, so they're modeled as a fluid
+`clamp()` that interpolates linearly between the mobile value at a 375px
+viewport and the desktop value at a 1440px viewport (clamped flat outside that
+range) — no breakpoint step. `body-*` is identical in both Figma modes, so it
+stays a fixed value. `@theme inline` exposes each role as a `text-*` utility.
 
-| Role | Mobile | Desktop | Tailwind class |
-| --- | --- | --- | --- |
-| `display-lg` | 100px | 120px | `text-display-lg` |
-| `display-base` | 80px | 100px | `text-display-base` |
-| `display-sm` | 59px | 80px | `text-display-sm` |
-| `headline-xl` | 44px | 59px | `text-headline-xl` |
-| `headline-lg` | 32px | 44px | `text-headline-lg` |
-| `headline-base` | 24px | 32px | `text-headline-base` |
-| `headline-sm` | 20px | 24px | `text-headline-sm` |
-| `body-large` | 20px | 20px | `text-body-large` |
-| `body-base` | 16px | 16px | `text-body-base` |
-| `body-small` | 14px | 14px | `text-body-small` |
-| `body-xs` | 10px | 10px | `text-body-xs` |
+| Role | 375px (mobile) | 1440px (desktop) | Scaling | Tailwind class |
+| --- | --- | --- | --- | --- |
+| `display-lg` | 100px | 120px | fluid | `text-display-lg` |
+| `display-base` | 80px | 100px | fluid | `text-display-base` |
+| `display-sm` | 59px | 80px | fluid | `text-display-sm` |
+| `headline-xl` | 44px | 59px | fluid | `text-headline-xl` |
+| `headline-lg` | 32px | 44px | fluid | `text-headline-lg` |
+| `headline-base` | 24px | 32px | fluid | `text-headline-base` |
+| `headline-sm` | 20px | 24px | fluid | `text-headline-sm` |
+| `body-large` | 20px | 20px | fixed | `text-body-large` |
+| `body-base` | 16px | 16px | fixed | `text-body-base` |
+| `body-small` | 14px | 14px | fixed | `text-body-small` |
+| `body-xs` | 10px | 10px | fixed | `text-body-xs` |
