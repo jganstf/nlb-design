@@ -1,0 +1,284 @@
+/*
+ * Design tokens extracted from the Figma "Nantucket - Design System" file
+ * (Variables panel: primitives, semantic colors, type-size). Keep this in
+ * sync with docs/TOKENS.md and docs/figma-variable-tokens/*.json.
+ */
+:root {
+  /* ---- Primitive: font ---- */
+  --font-serif: var(--font-serif), "EB Garamond", serif;
+  --font-sans: var(--font-sans), "DM Sans", sans-serif;
+  --font-mono: var(--font-mono), "DM Mono", monospace;
+
+  --font-weight-regular: 400;
+
+  --text-xs: 0.625rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2rem;
+  --text-3xl: 2.75rem;
+  --text-4xl: 3.6875rem;
+  --text-5xl: 5rem;
+  --text-6xl: 6.25rem;
+  --text-7xl: 7.5rem;
+
+  --tracking-tight: -0.125rem;
+  --tracking-normal: 0rem;
+  --tracking-wide: 0.125rem;
+
+  /* ---- Primitive: color ---- */
+  --color-moody-moor-100: #0e0905;
+  --color-moody-moor-200: #1d130a;
+  --color-moody-moor-300: #2b1c10;
+  --color-moody-moor-400: #3a2615;
+  --color-moody-moor-500: #482f1a;
+  --color-moody-moor-600: #533b28;
+  --color-moody-moor-700: #6d5948;
+  --color-moody-moor-800: #b6aca3;
+  --color-moody-moor-900: #dad5d1;
+
+  --color-dusty-heath-100: #2b2720;
+  --color-dusty-heath-200: #554d40;
+  --color-dusty-heath-300: #807461;
+  --color-dusty-heath-400: #aa9a81;
+  --color-dusty-heath-500: #d5c1a1;
+  --color-dusty-heath-600: #ddcdb4;
+  --color-dusty-heath-700: #e6dac7;
+  --color-dusty-heath-800: #eee6d9;
+  --color-dusty-heath-900: #f3eee5;
+  --color-dusty-heath-1000: #f8f5f0;
+  --color-dusty-heath-1100: #fdfdfb;
+
+  --color-lowlands-100: #304327;
+  --color-lowlands-200: #34492b;
+  --color-lowlands-300: #374f2e;
+  --color-lowlands-400: #455f3c;
+  --color-lowlands-500: #3d5934;
+  --color-lowlands-600: #455f3c;
+  --color-lowlands-700: #546c4b;
+  --color-lowlands-800: #63795b;
+  --color-lowlands-900: #72866a;
+
+  --color-goldenrod-100: #937415;
+  --color-goldenrod-200: #a98618;
+  --color-goldenrod-300: #c0971b;
+  --color-goldenrod-400: #d6a91d;
+  --color-goldenrod-500: #ecbb20;
+  --color-goldenrod-600: #eec135;
+  --color-goldenrod-700: #efc74b;
+  --color-goldenrod-800: #f0ce60;
+  --color-goldenrod-900: #f2d476;
+
+  --color-utility-500: #ec4220;
+
+  /* ---- Semantic: color (Mode 1) ---- */
+  --background: var(--color-dusty-heath-1000);
+  --on-background: var(--color-moody-moor-500);
+  --on-background-subtle: var(--color-moody-moor-700);
+  --on-background-tonal: var(--color-moody-moor-900);
+
+  --primary: var(--color-dusty-heath-800);
+  --on-primary: var(--color-moody-moor-600);
+
+  --secondary: var(--color-goldenrod-500);
+  --on-secondary: var(--color-moody-moor-600);
+
+  --accent-primary: var(--color-moody-moor-500);
+  --on-accent-primary: var(--color-dusty-heath-1000);
+  --on-accent-primary-tonal: var(--color-moody-moor-700);
+
+  --accent-secondary: var(--color-lowlands-500);
+  --accent-secondary-tonal: var(--color-lowlands-800);
+  --on-accent-secondary: var(--color-dusty-heath-1000);
+
+  --tag: var(--color-dusty-heath-800);
+  --on-tag: var(--color-moody-moor-600);
+
+  --input: var(--color-dusty-heath-900);
+  --on-input: var(--color-moody-moor-600);
+  --on-input-placeholder: var(--color-moody-moor-800);
+
+  --border-light: var(--color-dusty-heath-500);
+  --border-dark: var(--color-moody-moor-500);
+  --border-alt: var(--color-goldenrod-500);
+
+  --surface-dark: var(--color-dusty-heath-900);
+  --on-surface-dark: var(--color-moody-moor-600);
+  --on-surface-dark-tonal: var(--color-dusty-heath-600);
+
+  --surface-light: var(--color-dusty-heath-1100);
+  --on-surface-light: var(--color-moody-moor-600);
+
+  --hover-lighter: color-mix(in srgb, var(--color-dusty-heath-1000) 70%, transparent);
+  --hover-darker: color-mix(in srgb, var(--color-dusty-heath-200) 8%, transparent);
+  --hover-green: color-mix(in srgb, var(--color-lowlands-500) 90%, transparent);
+
+  --error: var(--color-utility-500);
+
+  /* ---- Semantic: type-size (mobile, mobile-first default) ---- */
+  --type-size-display-lg: 6.25rem;
+  --type-size-display-base: 5rem;
+  --type-size-display-sm: 3.6875rem;
+  --type-size-headline-xl: 2.75rem;
+  --type-size-headline-lg: 2rem;
+  --type-size-headline-base: 1.5rem;
+  --type-size-headline-sm: 1.25rem;
+  --type-size-body-large: 1.25rem;
+  --type-size-body-base: 1rem;
+  --type-size-body-small: 0.875rem;
+  --type-size-body-xs: 0.625rem;
+}
+
+/* ---- Semantic: type-size (desktop mode, >=1024px) ---- */
+@media (min-width: 1024px) {
+  :root {
+    --type-size-display-lg: 7.5rem;
+    --type-size-display-base: 6.25rem;
+    --type-size-display-sm: 5rem;
+    
+    --type-size-headline-xl: 3.6875rem;
+    --type-size-headline-lg: 2.75rem;
+    --type-size-headline-base: 2rem;
+    --type-size-headline-sm: 1.5rem;
+    
+    --type-size-body-large: 1.25rem;
+    --type-size-body-base: 1rem;
+    --type-size-body-small: 0.875rem;
+    --type-size-body-xs: 0.625rem;
+  }
+}
+
+@theme inline {
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-weight-regular: var(--font-weight-regular);
+
+  --text-xs: var(--text-xs);
+  --text-sm: var(--text-sm);
+  --text-base: var(--text-base);
+  --text-lg: var(--text-lg);
+  --text-xl: var(--text-xl);
+  --text-2xl: var(--text-2xl);
+  --text-3xl: var(--text-3xl);
+  --text-4xl: var(--text-4xl);
+  --text-5xl: var(--text-5xl);
+  --text-6xl: var(--text-6xl);
+  --text-7xl: var(--text-7xl);
+
+  --tracking-tight: var(--tracking-tight);
+  --tracking-normal: var(--tracking-normal);
+  --tracking-wide: var(--tracking-wide);
+
+  --text-display-lg: var(--type-size-display-lg);
+  --text-display-base: var(--type-size-display-base);
+  --text-display-sm: var(--type-size-display-sm);
+  --text-headline-xl: var(--type-size-headline-xl);
+  --text-headline-lg: var(--type-size-headline-lg);
+  --text-headline-base: var(--type-size-headline-base);
+  --text-headline-sm: var(--type-size-headline-sm);
+  --text-body-large: var(--type-size-body-large);
+  --text-body-base: var(--type-size-body-base);
+  --text-body-small: var(--type-size-body-small);
+  --text-body-xs: var(--type-size-body-xs);
+
+  --color-moody-moor-100: var(--color-moody-moor-100);
+  --color-moody-moor-200: var(--color-moody-moor-200);
+  --color-moody-moor-300: var(--color-moody-moor-300);
+  --color-moody-moor-400: var(--color-moody-moor-400);
+  --color-moody-moor-500: var(--color-moody-moor-500);
+  --color-moody-moor-600: var(--color-moody-moor-600);
+  --color-moody-moor-700: var(--color-moody-moor-700);
+  --color-moody-moor-800: var(--color-moody-moor-800);
+  --color-moody-moor-900: var(--color-moody-moor-900);
+
+  --color-dusty-heath-100: var(--color-dusty-heath-100);
+  --color-dusty-heath-200: var(--color-dusty-heath-200);
+  --color-dusty-heath-300: var(--color-dusty-heath-300);
+  --color-dusty-heath-400: var(--color-dusty-heath-400);
+  --color-dusty-heath-500: var(--color-dusty-heath-500);
+  --color-dusty-heath-600: var(--color-dusty-heath-600);
+  --color-dusty-heath-700: var(--color-dusty-heath-700);
+  --color-dusty-heath-800: var(--color-dusty-heath-800);
+  --color-dusty-heath-900: var(--color-dusty-heath-900);
+  --color-dusty-heath-1000: var(--color-dusty-heath-1000);
+  --color-dusty-heath-1100: var(--color-dusty-heath-1100);
+
+  --color-lowlands-100: var(--color-lowlands-100);
+  --color-lowlands-200: var(--color-lowlands-200);
+  --color-lowlands-300: var(--color-lowlands-300);
+  --color-lowlands-400: var(--color-lowlands-400);
+  --color-lowlands-500: var(--color-lowlands-500);
+  --color-lowlands-600: var(--color-lowlands-600);
+  --color-lowlands-700: var(--color-lowlands-700);
+  --color-lowlands-800: var(--color-lowlands-800);
+  --color-lowlands-900: var(--color-lowlands-900);
+
+  --color-goldenrod-100: var(--color-goldenrod-100);
+  --color-goldenrod-200: var(--color-goldenrod-200);
+  --color-goldenrod-300: var(--color-goldenrod-300);
+  --color-goldenrod-400: var(--color-goldenrod-400);
+  --color-goldenrod-500: var(--color-goldenrod-500);
+  --color-goldenrod-600: var(--color-goldenrod-600);
+  --color-goldenrod-700: var(--color-goldenrod-700);
+  --color-goldenrod-800: var(--color-goldenrod-800);
+  --color-goldenrod-900: var(--color-goldenrod-900);
+
+  --color-utility-500: var(--color-utility-500);
+
+  --color-background: var(--background);
+  --color-on-background: var(--on-background);
+  --color-on-background-subtle: var(--on-background-subtle);
+  --color-on-background-tonal: var(--on-background-tonal);
+
+  --color-primary: var(--primary);
+  --color-on-primary: var(--on-primary);
+
+  --color-secondary: var(--secondary);
+  --color-on-secondary: var(--on-secondary);
+
+  --color-accent-primary: var(--accent-primary);
+  --color-on-accent-primary: var(--on-accent-primary);
+  --color-on-accent-primary-tonal: var(--on-accent-primary-tonal);
+
+  --color-accent-secondary: var(--accent-secondary);
+  --color-accent-secondary-tonal: var(--accent-secondary-tonal);
+  --color-on-accent-secondary: var(--on-accent-secondary);
+
+  --color-tag: var(--tag);
+  --color-on-tag: var(--on-tag);
+
+  --color-input: var(--input);
+  --color-on-input: var(--on-input);
+  --color-on-input-placeholder: var(--on-input-placeholder);
+
+  --color-border-light: var(--border-light);
+  --color-border-dark: var(--border-dark);
+  --color-border-alt: var(--border-alt);
+
+  --color-surface-dark: var(--surface-dark);
+  --color-on-surface-dark: var(--on-surface-dark);
+  --color-on-surface-dark-tonal: var(--on-surface-dark-tonal);
+
+  --color-surface-light: var(--surface-light);
+  --color-on-surface-light: var(--on-surface-light);
+
+  --color-hover-lighter: var(--hover-lighter);
+  --color-hover-darker: var(--hover-darker);
+  --color-hover-green: var(--hover-green);
+
+  --color-error: var(--error);
+}
+
+
+/* todo: ; margin */
+@utility text-heading-base {
+  letter-spacing: -0.05em;
+  line-height: 1.1;
+}
+
+@utility text-heading-xl { @apply text-heading-base; }
+@utility text-heading-lg { @apply text-heading-base; }
+@utility text-heading-md { @apply text-heading-base; }
+@utility text-heading-sm { @apply text-heading-base; }
