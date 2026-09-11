@@ -164,6 +164,23 @@
 }
 
 @theme inline {
+  --spacing-gap-sm: var(--spacing-gap-sm);
+  --spacing-gap-md: var(--spacing-gap-md);
+  --spacing-gap-lg: var(--spacing-gap-lg);
+  --spacing-gap-xl: var(--spacing-gap-xl);
+
+  --spacing-inline: var(--spacing-inline);
+
+  --spacing-s1: var(--spacing-s1);
+  --spacing-s2: var(--spacing-s2);
+  --spacing-s3: var(--spacing-s3);
+  --spacing-s4: var(--spacing-s4);
+  --spacing-s5: var(--spacing-s5);
+  --spacing-s6: var(--spacing-s6);
+  --spacing-s7: var(--spacing-s7);
+  --spacing-s8: var(--spacing-s8);
+  --spacing-s9: var(--spacing-s9);
+
   --font-serif: var(--font-serif);
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
