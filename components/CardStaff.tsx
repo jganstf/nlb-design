@@ -35,7 +35,7 @@ export default function CardStaff({
         <Tag label={TAG_LABELS[tag]} size="lg" rounded={false} className="w-full" />
       </div>
       <div className="card-staff-info flex w-full flex-col items-start break-words">
-        <p className="card-staff-name w-full text-headline-sm font-normal leading-[1.2] tracking-normal text-on-background">
+        <p className="card-staff-name w-full text-headline-sm leading-[1.2] tracking-normal text-on-background">
           {name}
         </p>
         <p className="card-staff-title w-full font-sans text-body-base font-normal leading-[1.6] tracking-normal text-on-background-subtle opacity-60">

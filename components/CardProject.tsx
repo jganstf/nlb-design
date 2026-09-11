@@ -24,7 +24,7 @@ export default function CardProject({
         <Image src={imageSrc} alt="" fill sizes="322px" className="object-cover" />
       </div>
       <div className="card-project-content flex w-full flex-col items-start gap-3">
-        <p className="card-project-title w-full break-words text-headline-base font-normal leading-[1.1] tracking-normal text-on-background">
+        <p className="card-project-title w-full break-words text-headline-base tracking-normal text-on-background">
           {title}
         </p>
         {tags.length > 0 && (

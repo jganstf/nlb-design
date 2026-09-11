@@ -155,10 +155,22 @@ stays a fixed value. `@theme inline` exposes each role as a `text-*` utility.
 | `body-small` | 14px | 14px | fixed | `text-body-small` |
 | `body-xs` | 10px | 10px | fixed | `text-body-xs` |
 
-Every `text-headline-*` utility (`2xl` down to `sm`) already applies
-`font-family: var(--font-serif)` via the shared `text-heading-base` utility in
-`tokens.css` (along with a default `letter-spacing`/`line-height`) — do not
-add `font-serif` alongside `text-headline-*` in a className, it's redundant.
+Every `text-headline-*` utility (`2xl` down to `sm`) already `@apply`s the
+shared `text-heading-base` utility in `tokens.css`, which sets
+`font-family: var(--font-serif)`, `letter-spacing: -0.05em`, and
+`line-height: 1.1`. Don't pair any of the following with a `text-headline-*`
+class — they're already covered and just add noise:
+
+- `font-serif` (font-family)
+- `leading-[1.1]` / `leading-none` / any other `leading-*` (line-height)
+- `tracking-*` (letter-spacing)
+- `font-normal` (headings aren't bold by default; there's no font-weight to
+  reset)
+
+Only override one of these on a specific instance if the design genuinely
+calls for a different value than `text-heading-base` provides — in that
+case add just the one property that differs, not the whole set.
+
 `text-display-*` does **not** get this treatment (only `text-display-base`
 currently sets a font-family, which looks like an oversight rather than a
 rule) — add `font-serif` explicitly whenever you use a `text-display-*` size.

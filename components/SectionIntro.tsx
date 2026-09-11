@@ -28,7 +28,7 @@ export default function SectionIntro({
         <p className="section-intro-eyebrow whitespace-nowrap font-mono text-body-small leading-[1.6] tracking-wide uppercase">
           {eyebrow}
         </p>
-        <h2 className="section-intro-title text-headline-2xl font-normal leading-[1.05]">
+        <h2 className="section-intro-title text-headline-2xl leading-[1.05]">
           {heading}
         </h2>
       </div>

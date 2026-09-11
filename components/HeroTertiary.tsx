@@ -37,7 +37,7 @@ export default function HeroTertiary({
         <p className="hero-tertiary-eyebrow relative z-10 font-mono text-body-small leading-[1.6] tracking-wide uppercase text-on-background">
           {eyebrow}
         </p>
-        <h1 className="hero-tertiary-heading relative z-10 text-headline-xl font-normal leading-[1.1] text-on-background [text-wrap:pretty]">
+        <h1 className="hero-tertiary-heading relative z-10 text-headline-xl text-on-background [text-wrap:pretty]">
           {heading}
         </h1>
       </div>

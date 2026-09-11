@@ -38,7 +38,7 @@ export default function CardNews({
         <p className="card-news-date whitespace-nowrap font-sans text-body-base font-normal leading-[1.6] tracking-normal text-on-background-subtle">
           {date}
         </p>
-        <p className="card-news-title w-full text-headline-sm font-normal leading-[1.2] tracking-normal text-on-background">
+        <p className="card-news-title w-full text-headline-sm leading-[1.2] tracking-normal text-on-background">
           {title}
         </p>
       </div>

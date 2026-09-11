@@ -22,8 +22,9 @@ export default function MissionStatement({
 }: MissionStatementProps) {
   return (
     <section
-      className={`mission-statement relative flex w-full flex-col items-center justify-center overflow-clip bg-background px-10 py-40 ${className ?? ""}`}
+      className={`mission-statement relative overflow-clip bg-background px-10 py-40 tf-px ${className ?? ""}`}
     >
+      <div className="flex w-full flex-col items-center justify-center tf-max-w">
       <Image
         src="/svg/decorative-line-mission.svg"
         alt=""
@@ -41,6 +42,7 @@ export default function MissionStatement({
             <LinkButton key={link.label} {...link} />
           ))}
         </div>
+      </div>
       </div>
     </section>
   );
